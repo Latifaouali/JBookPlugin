@@ -1,0 +1,20 @@
+<%@ page import="com.jalios.jcms.uicomponent.app.AppConstants" %>
+<jalios:buffer name="customEditIcon">
+   <a class="modal list-group-item pub-action-main pub-action-edit" onclick="return false" href="<%= appHandler.getEditBookUrl() %>" title='<%= encodeForHTMLAttribute(glp("ui.com.alt.edit")) %>'>
+     <jalios:icon src="edit"/> <span class="publication-action-label"><%=glp("ui.com.alt.edit") %></span>
+   </a>
+
+   <jalios:edit data="<%= appHandler.getSelectedBook() %>" ctxEdit="false" popup="true" css="list-group-item pub-action-optional pub-action-edit">
+      <span class="pub-action-edit-icon nowrap"><jalios:icon src="edit"/></span>
+      <span class="publication-action-label"><%=glp("ui.com.btn.edit-full") %></span>
+   </jalios:edit>
+</jalios:buffer>
+<%
+request.setAttribute(AppConstants.BODY_INCLUDE_PUB_REQUEST_ATTR, appHandler.getSelectedBook());
+request.setAttribute(AppConstants.BODY_INCLUDE_PATH_REQUEST_ATTR, "/types/Book/doBookFullDisplay.jsp");
+request.setAttribute("jbook.appHandler", appHandler);
+request.setAttribute("PUBLICATION_ACTIONS_DELETE_REDIRECT", appUrl);
+request.setAttribute("PUBLICATION_ACTIONS_EDIT_ITEM", ((Map<String, Object>) request.getAttribute("BUFFER_CONTEXT")).get("customEditIcon"));
+%>
+<jalios:include jsp="/front/app/doAppBodyInclude.jsp" />
+</div>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plugin PUBLIC "-//JALIOS//DTD JCMS-PLUGIN 1.7//EN" "https://community.jalios.com/dtd/jcms-plugin-1.7.dtd">
+
+<plugin name="JBookPlugin" version="0.1" author="Jalios" license="Jalios SA" initialize="true" jcms="" order="0" url="" jsync="true" appserver="">
+  <!-- ======================== Label and Descriptions ==================== -->
+  <label xml:lang="en">JBook Plugin</label>
+  <label xml:lang="fr">Module JBook</label>
+  <description xml:lang="en">This plugin illustrates the development of an application with JPlatform.</description>
+  <description xml:lang="fr">Ce module illustre le développement d'une application avec JPlatform.</description>
+
+  <!-- ========================== Types and Templates ===================== -->
+  <types>
+      <type name="Book">
+        <file path="doBookFullDisplay.jsp" />
+        <file path="doEditBookModal.jsp" />
+      </type>
+      <type name="PortletJBook">
+      <file path="doPortletJBookFullDisplay.jsp" />
+    </type>
+  </types>
+
+  <!-- ========================== Classes and Jars ======================== -->
+  <java-classes>
+    <java package="com.jalios.jcmsplugin.jbook" />
+  </java-classes>
+  
+    <!-- ============================= Hibernate ============================ -->
+  <hibernate>
+     <mapping resource="com/jalios/jcmsplugin/jbook/data/JBookBorrowing.hbm.xml"/>
+  </hibernate>
+  
+ <!-- ========================== Plugin Components ======================= -->
+  <plugincomponents>
+    <channellistener class="com.jalios.jcmsplugin.jbook.component.JBookStartupDataGenerator" />
+     <policyfilter    class="com.jalios.jcmsplugin.jbook.component.JBookShortcutPolicyFilter" />
+  </plugincomponents>
+  <!-- ===================== Private/Public/Webapp files ================== -->
+  
+  <private-files>
+    <directory path="properties" />
+  </private-files>
+  <public-files>
+    <directory path="js" />
+    <directory path="css" />
+    <directory path="docs" />
+    <directory path="jsp" />
+    <directory path="images" />
+    <directory path="jmobile" />
+  </public-files>
+</plugin>

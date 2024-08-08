@@ -1,0 +1,21 @@
+<div class="borrowing-status">
+<%
+String borrowingDuration = "";
+if (isBorrowed) {
+  borrowingDuration = DateUtil.formatDuration(currentBorrowing.getBorrowingDate(), new Date(), userLocale);
+}
+%>
+  <% if (isBorrowedByMe) { %>
+  <jalios:message title="" dismissable="false">
+  <jalios:buffer name="borrowingDate"><jalios:date date="<%= currentBorrowing.getBorrowingDate() %>" /></jalios:buffer>
+  <%= glp("jcmsplugin.jbook.borrowing.status.borrowed-by-me", borrowingDate, borrowingDuration) %>
+  </jalios:message>
+
+  <% } else if (isBorrowed) { %>
+  <jalios:message title="" dismissable="false" level="<%= MessageLevel.WARN %>">
+  <jalios:buffer name="borrowingDateBuffer"><jalios:date date="<%= currentBorrowing.getBorrowingDate() %>" /></jalios:buffer>
+  <jalios:buffer name="borrowerBuffer"><jalios:link data="<%= currentBorrowing.getAuthor()%>" /></jalios:buffer>
+  <%= glp("jcmsplugin.jbook.borrowing.status.borrowed", borrowerBuffer, borrowingDateBuffer, borrowingDuration) %>
+  </jalios:message>
+  <% } %>
+</div>

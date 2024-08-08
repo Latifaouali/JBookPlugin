@@ -1,0 +1,48 @@
+<%
+QueryResultSet queryResultSet = appHandler.getResultSet();
+%>
+
+<div class="catalog">
+
+<%-- No results --%>
+<% if (!appHandler.showTopics() && Util.isEmpty(queryResultSet)) { %>
+<%@ include file='/front/app/doAppNoResult.jspf' %>
+
+<%-- Display Catalog --%>
+<% } else { %>
+
+<%-- Topics --%>
+<% if (appHandler.showTopics()) { %>
+
+<%-- Breadcrumb --%>
+<jalios:breadcrumb items="<%= appHandler.getBreadcrumbItems() %>" />
+
+<jalios:cards css="is-centered">
+<jalios:foreach collection="<%= appHandler.getTopicSet() %>" name="cat" type="Category">
+<%@ include file='/plugins/JBookPlugin/jsp/app/doTopicCard.jspf' %>
+</jalios:foreach>
+</jalios:cards>
+<% } %>
+
+<%-- Books --%>
+<jalios:pager name='pagerHandler' declare='true' action='init'
+size='<%= queryResultSet.getResultSize() %>'
+pageSize='12'
+pageSizes='12,24,36,60'
+sizeAccurate='<%= queryResultSet.isTotalAccurate() %>'
+sort='<%= appHandler.getSort() %>'
+/>
+
+<jalios:cards css="is-centered">
+<jalios:foreach collection="<%= appHandler.getSortedResultSet() %>" name="book" type="Book"
+skip="<%= pagerHandler.getStart()%>"
+max="<%= pagerHandler.getPageSize() %>">
+<%@ include file="/plugins/JBookPlugin/jsp/app/doBookCard.jspf" %>
+</jalios:foreach>
+
+</jalios:cards>
+
+<jalios:pager name="pagerHandler" />
+
+<% } %>
+</div>

@@ -1,0 +1,8 @@
+<a href="<%= appHandler.getAppUrl(cat) %>" class="ajax-refresh">
+<jalios:card css="jbook-card-topic">
+  <jalios:cardImage src="plugins/JBookPlugin/images/books.png" alt="" />
+  <jalios:cardBlock css="jalios-card-body">
+    <div class="card-title"><%= cat.getName(userLang) %></div>
+  </jalios:cardBlock>
+</jalios:card>
+</a>

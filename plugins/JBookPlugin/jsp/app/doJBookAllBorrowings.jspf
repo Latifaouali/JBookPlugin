@@ -1,0 +1,13 @@
+<%
+List<JBookBorrowing> borrowingList = appHandler.getAllBorrowingList();
+%>
+<div class="all-borrowings">
+  <%-- No borrowings --%>
+  <% if (Util.isEmpty(borrowingList)) { %>
+  <jalios:appBodyNoResult text="jcmsplugin.jbook.msg.all-borrowings.none" />
+
+  <%-- Borrowing List --%>
+  <% } else { %>
+  <%@ include file='/plugins/JBookPlugin/jsp/app/doJBookBorrowingList.jspf' %>
+  <% } %>
+</div>

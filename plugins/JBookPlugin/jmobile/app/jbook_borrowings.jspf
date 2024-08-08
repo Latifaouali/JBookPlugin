@@ -1,0 +1,18 @@
+<% List<JBookBorrowing> borrowingList = appHandler.getMyBorrowingList(); %>
+<div class="service-jbook-borrowings" data-role="content">
+  <ul data-role="listview">
+
+    <% if (Util.notEmpty(borrowingList)) { %>
+    <jalios:foreach collection="<%= borrowingList %>" type="JBookBorrowing" name="borrowing">
+    <jalios:dataListItem data="<%= borrowing %>" template="jmobile-jbook" />
+    </jalios:foreach>
+
+    <% } else { %>
+    <li>
+      <div class="alert alert-info">
+        <%= glp("jcmsplugin.jbook.msg.my-borrowings.none") %>
+      </div>
+    </li>
+    <% } %>
+  </ul>
+</div>

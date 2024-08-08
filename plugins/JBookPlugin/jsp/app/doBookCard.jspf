@@ -1,0 +1,39 @@
+<%
+JBookBorrowing cardBorrowing = book.getCurrentBorrowing();
+Member borrower = cardBorrowing == null ? null : cardBorrowing.getBorrower();
+boolean isBorrowed = borrower != null;
+boolean isBorrowedByMe = borrower == loggedMember;
+String footerStatus = isBorrowedByMe ? "is-borrowed-by-you" : (isBorrowed ? "is-borrowed" : "available");
+%>
+<a href="<%= book.getDisplayUrl(userLocale) %>">
+<jalios:card css="jbook-card-book">
+
+<%-- IMAGE --%>
+<jalios:cardImage src="<%= book.getDataImage() %>" alt="" />
+
+<%-- TITLE --%>
+<jalios:cardBlock css="jalios-card-body">
+<div class="card-title"><%= book.getTitle(userLang) %></div>
+</jalios:cardBlock>
+
+<%-- FOOTER --%>
+<jalios:cardBlock mode="<%= com.jalios.jcms.taglib.card.CardBlockMode.FOOTER %>" css="<%= footerStatus %>">
+<% if (isBorrowedByMe ) { %>
+<jalios:memberphoto member="<%= borrower %>" size="<%= PhotoSize.ICON %>" link="false" />
+<%= glp("jcmsplugin.jbook.lbl.borrowed-by-you") %>
+<% } else if (isBorrowed) { %>
+<jalios:memberphoto member="<%= borrower %>" size="<%= PhotoSize.ICON %>" link="false" />
+<%= glp("jcmsplugin.jbook.lbl.borrowed-by", borrower.getFullName()) %>
+<% } else { %>
+<%= glp("jcmsplugin.jbook.lbl.available") %>
+<% } %>
+</jalios:cardBlock>
+
+<%-- CORNERS --%>
+<% if (isBorrowed) { %>
+<div class="card-corner-right card-corner-triangle card-corner-danger">
+<jalios:icon src="jcmsplugin-jbook-corner-borrowed"/>
+</div>
+<% } %>
+</jalios:card>
+</a>

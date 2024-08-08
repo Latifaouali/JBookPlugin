@@ -1,0 +1,53 @@
+
+# ----------------------------------------------------------------------
+# Templates {usage = jcmsplugin.plugin.sample}
+# ----------------------------------------------------------------------
+
+# Declaration of a new Usage
+# jcms.resource.default-template.{jcmsplugin.plugin.sample}: custom/jcms/doSampleDisplay.jsp
+
+# Declaration of a new Usage for FullDisplay
+# I18N to cut&past in en.prop / fr.prop
+# ui.editportlet.usage.{jcmsplugin.plugin.sample}: Usage label
+
+# Declaration of a new Usage for Skin
+# I18N to cut&past in en.prop / fr.prop
+# ui.editportlet.usage.skin.{jcmsplugin.plugin.sample}: Usage label for skin
+
+# LESS
+#channel.less.plugins/${pluginName}Plugin/css/plugin.css:    plugins/${pluginName}Plugin/css/plugin.less
+
+shortcut.jcmsplugin.jbook.icon: plugins/JBookPlugin/images/jbook.png
+shortcut.jcmsplugin.jbook.link: plugins/JBookPlugin/jsp/app/jbook.jsp
+
+#Icon
+icon.jcmsplugin-jbook-app: glyph: icomoon-book3
+
+# Shortcut
+#shortcut.jcmsplugin.jbook.icon: plugins/JBookPlugin/images/jbook48.png
+#shortcut.jcmsplugin.jbook.link: plugins/JBookPlugin/jsp/app/jbook.jsp
+
+# LESS
+channel.less.plugins/JBookPlugin/css/jbook.css: plugins/JBookPlugin/css/jbook.less
+
+$id.jcmsplugin.jbook.catalog.topic-root.chooser-category:
+
+# CategoryBrowser
+category.category-browser.jbook.class: com.jalios.jcmsplugin.jbook.component.JBookCategoryBrowser
+
+jcmsplugin.smartphone.link-prefix.Book: plugins/JBookPlugin/jmobile/types/book.jsp?id=
+
+jcmsplugin.smartphone.shortcut-mapping.$id.shortcut.jcmsplugin.jbook: plugins/JBookPlugin/jmobile/app/jbook.jsp
+jcmsplugin.smartphone.service.jbook.icon:                             plugins/JBookPlugin/images/jbook48.png
+
+jcms.resource.include.data-list-item.jmobile-jbook.Book:              plugins/JBookPlugin/jmobile/app/doJBookItem.jsp
+jcms.resource.include.data-list-item.jmobile-jbook.JBookBorrowing:    plugins/JBookPlugin/jmobile/app/doJBookBorrowingItem.jsp
+
+
+# JMobile
+jcmsplugin.smartphone.service.jbook:                                  plugins/JBookPlugin/jmobile/app/jbook.jsp
+jcmsplugin.smartphone.service.jbook.icon:                             plugins/JBookPlugin/images/jbook48.png
+jcmsplugin.smartphone.shortcut-mapping.$id.shortcut.jcmsplugin.jbook: plugins/JBookPlugin/jmobile/app/jbook.jsp
+jcmsplugin.smartphone.link-prefix.Book:                               plugins/JBookPlugin/jmobile/types/book.jsp?id=
+jcms.resource.include.data-list-item.jmobile-jbook.Book:              plugins/JBookPlugin/jmobile/app/doJBookItem.jsp
+jcms.resource.include.data-list-item.jmobile-jbook.JBookBorrowing:    plugins/JBookPlugin/jmobile/app/doJBookBorrowingItem.jsp

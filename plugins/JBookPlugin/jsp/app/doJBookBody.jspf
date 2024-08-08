@@ -1,0 +1,12 @@
+<% if (appHandler.showCatalog()) { %>
+  <%@ include file='/plugins/JBookPlugin/jsp/app/doJBookCatalog.jspf' %>
+
+<% } else if (appHandler.showMyBorrowings()) { %>
+  <%@ include file='/plugins/JBookPlugin/jsp/app/doJBookMyBorrowings.jspf' %>
+
+<% } else if (appHandler.showAllBorrowings()) { %>
+  <%@ include file='/plugins/JBookPlugin/jsp/app/doJBookAllBorrowings.jspf' %>
+
+<% } else if (appHandler.showBook()) { %>
+  <%@ include file='/plugins/JBookPlugin/jsp/app/doJBookBook.jspf' %>
+<% } %>

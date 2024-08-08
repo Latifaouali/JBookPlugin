@@ -1,0 +1,57 @@
+data.$id.shortcut.jcmsplugin.jbook.title: JBook
+data.$id.shortcut.jcmsplugin.jbook.text: Catalogue des livres empruntables.
+
+jcmsplugin.jbook.app.catalog.title: Livres à emprunter
+
+jcmsplugin.jbook.app.catalog.btn.add-book : Ajouter un livre
+
+data.$id.jcmsplugin.jbook.catalog.topic-root: Racine des thématiques
+jcmsplugin.jbook.app.catalog.root : Accueil
+
+jcmsplugin.jbook.app.filters: Filtres
+jcmsplugin.jbook.app.filter.begin-date: Ajouté après...
+jcmsplugin.jbook.app.filter.end-date:   Ajouté avant...
+jcmsplugin.jbook.app.filter.mbr:        Ajouté par...
+
+jcmsplugin.jbook.btn.release: Je le rends...
+jcmsplugin.jbook.btn.contact: Contacter l'emprunteur
+jcmsplugin.jbook.btn.force-borrow: Je l'ai pris !
+jcmsplugin.jbook.btn.borrow: Je l'emprunte...
+
+jcmsplugin.jbook.borrowing.status.borrowed-by-me: Vous l'empruntez depuis le {0} ({1}).
+jcmsplugin.jbook.borrowing.status.borrowed: {0} l'empunte depuis le {1} ({2}).
+
+jcmsplugin.jbook.lbl.prev-borrowers: Précédents emprunteurs
+
+jcmsplugin.jbook.lbl.borrowed-by-you: Vous l'empruntez
+jcmsplugin.jbook.lbl.borrowed-by: {0} l'emprunte
+jcmsplugin.jbook.lbl.available: Disponible
+
+jcmsplugin.jbook.app.view.my-borrowings: Mes emprunts
+jcmsplugin.jbook.app.view.all-borrowings: Tous les emprunts
+
+jcmsplugin.jbook.app.views: Affichage
+jcmsplugin.jbook.app.view.catalog: Catalogue
+
+jcmsplugin.jbook.msg.my-borrowings.none: Vous n'avez aucun emprunt en curs.
+jcmsplugin.jbook.msg.all-borrowings.none: Il n'y aucun emprunt en cours.
+
+# CategoryBrowser
+category.category-browser.jbook: Rechercher dans JBook
+
+...
+
+# PortletJBook.xml
+types.PortletJBook.label:                           Portlet Livres empruntables
+types.PortletJBook.description:                     Cette portlet affiche le catalogue des livres empruntables.
+types.PortletJBook.title.label:                     Titre
+types.PortletJBook.fields.refineWorkspace.label:    Affiner sur l'espace de travail courant
+types.PortletJBook.fields.refineWorkspace.onLabel:  Oui
+types.PortletJBook.fields.refineWorkspace.offLabel: Non
+types.PortletJBook.fields.topicRoot.label:          Racine de thématiques
+types.PortletJBook.fields.topicRoot.description:    Si aucune racine de thématiques n'est indiquée, c'est la racine générale qui sera utilisée.
+
+# JMobile
+jcmsplugin.smartphone.service.jbook: JBook
+jcmsplugin.jbook.jmobile.tab.catalog: Catalogue
+jcmsplugin.jbook.jmobile.tab.borrowings: Emprunts

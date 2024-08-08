@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "classpath://org/hibernate/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.jalios.jcmsplugin.jbook.data.JBookBorrowing" table="P_JBOOK_BORROWING">
+    <cache usage="read-write" />
+    <id name="rowId" column="rowId">
+      <generator class="native"/>
+    </id>
+    <property name="cdate" not-null="true"/>
+    <property name="mdate" not-null="true"/>
+    <property name="authorId" length="32" index="IP_JBOOK_BORROWING_AUTHOR"/>
+
+    <property name="bookId"        index="IP_JBOOK_BORROWING_BOOK"/>
+    <property name="borrowerId"    index="IP_JBOOK_BORROWING_BRWR"/>
+    <property name="borrowingDate" index="IP_JBOOK_BORROWING_BDATE"/>
+    <property name="releaseDate"   index="IP_JBOOK_BORROWING_RDATE"/>
+  </class>
+</hibernate-mapping>

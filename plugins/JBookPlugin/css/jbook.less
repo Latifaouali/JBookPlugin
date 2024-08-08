@@ -1,0 +1,26 @@
+@import "../../../css/jalios/core/init-mixins.less";
+@import "../../../css/jalios/core/app/jalios-app-variables.less";
+
+// Hook for JCMS
+@import "../../../css/plugin.less";
+
+
+@app-color-jbook: #1abc9c;
+
+.app-theme-from-color(jbook, @app-color-jbook);
+.app-jbook {
+
+  .card-inline-layout {
+    .card.jbook-card-topic {
+      height: 243px;
+    }
+  }
+  
+  .app-pub-wrapper {
+    .buttons {
+      text-align: center;
+      margin-bottom: 2*@baseline;
+    }
+    }
+
+}

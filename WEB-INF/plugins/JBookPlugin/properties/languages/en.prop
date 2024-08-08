@@ -1,0 +1,58 @@
+data.$id.shortcut.jcmsplugin.jbook.title: JBook
+data.$id.shortcut.jcmsplugin.jbook.text: Catalog of Borrowable Books
+
+jcmsplugin.jbook.app.catalog.title: Borrowable Books
+
+jcmsplugin.jbook.app.catalog.btn.add-book : Add a book
+
+data.$id.jcmsplugin.jbook.catalog.topic-root: Root of topics
+jcmsplugin.jbook.app.catalog.root : Home
+
+jcmsplugin.jbook.app.filters: Filters
+jcmsplugin.jbook.app.filter.begin-date: Added after...
+jcmsplugin.jbook.app.filter.end-date:   Added before...
+jcmsplugin.jbook.app.filter.mbr:        Added by...
+
+jcmsplugin.jbook.btn.release: I release it...
+jcmsplugin.jbook.btn.contact: Contact the borrower
+jcmsplugin.jbook.btn.force-borrow: I took it!
+jcmsplugin.jbook.btn.borrow: I borrow it...
+
+jcmsplugin.jbook.borrowing.status.borrowed-by-me: You've been borrowing it since {0} ({1}).
+jcmsplugin.jbook.borrowing.status.borrowed: {0} has been borrowing it since {1} ({2}).
+
+jcmsplugin.jbook.lbl.prev-borrowers: Previous Borrowers
+
+jcmsplugin.jbook.lbl.borrowed-by-you: You borrow it
+jcmsplugin.jbook.lbl.borrowed-by: {0} borrows it
+jcmsplugin.jbook.lbl.available: Available
+
+jcmsplugin.jbook.app.view.my-borrowings: My borrowings
+jcmsplugin.jbook.app.view.all-borrowings: All borrowings
+
+jcmsplugin.jbook.app.views: Views
+jcmsplugin.jbook.app.view.catalog: Catalog
+
+jcmsplugin.jbook.msg.my-borrowings.none: You have no outstanding borrowings.
+jcmsplugin.jbook.msg.all-borrowings.none: There are no outstanding borrowings.
+
+# CategoryBrowser
+category.category-browser.jbook: Search in JBook
+
+...
+
+# PortletJBook.xml
+types.PortletJBook.label:                           Borrowable Books portlet
+types.PortletJBook.description:                     This portlet displays the catalog of borrowable books.
+types.PortletJBook.title.label:                     Title
+types.PortletJBook.fields.refineWorkspace.label:    Refine on current workspace
+types.PortletJBook.fields.refineWorkspace.onLabel:  Yes
+types.PortletJBook.fields.refineWorkspace.offLabel: No
+types.PortletJBook.fields.topicRoot.label:          Topic Root
+types.PortletJBook.fields.topicRoot.description:    If no topic root is specified, the common topic root will be used.
+
+# JMobile
+jcmsplugin.smartphone.service.jbook: JBook
+jcmsplugin.jbook.jmobile.tab.catalog: Catalogue
+jcmsplugin.jbook.jmobile.tab.borrowings: Emprunts
+

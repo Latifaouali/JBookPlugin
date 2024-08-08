@@ -1,0 +1,14 @@
+<%
+String bookId = book.getId();
+String bookUrl = Channel.getChannel().getUrl() + channel.getProperty("descriptive-urls.prefix") + "/" + bookId;
+%>
+<div class="buttons">
+  <% if (isBorrowedByMe) { %>
+  <a href="plugins/JBookPlugin/jsp/action/release.jsp?book=<%= bookId %>" class="btn btn-primary modal confirm"><%= glp("jcmsplugin.jbook.btn.release") %></a>
+  <% } else if (isBorrowed) { %>
+  <a href="front/recommendation/recommendationModal.jsp?recommendedDataId=<%= bookId %>&amp;alertLevelKey=action&amp;members=<%= JcmsUtil.getId(currentBorrowing.getAuthor()) %>" class="btn btn-default modal"><%= glp("jcmsplugin.jbook.btn.contact") %></a>
+  <a href="plugins/JBookPlugin/jsp/action/borrow.jsp?book=<%= bookId %>" class="btn btn-default modal confirm"><%= glp("jcmsplugin.jbook.btn.force-borrow") %></a>
+  <% } else { %>
+  <a href="plugins/JBookPlugin/jsp/action/borrow.jsp?book=<%= bookId %>" class="btn btn-primary modal confirm"><%= glp("jcmsplugin.jbook.btn.borrow") %></a>
+  <% } %>
+</div>

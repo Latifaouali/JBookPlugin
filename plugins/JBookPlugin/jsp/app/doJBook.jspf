@@ -1,0 +1,36 @@
+<%@ page import="com.jalios.jcms.uicomponent.app.*" %><%
+%><%@ page import="com.jalios.jcmsplugin.jbook.data.*" %><%
+%><%@ include file="/front/app/doAppCommon.jspf" %><%
+%><jsp:useBean id="appHandler" scope="page" class="com.jalios.jcmsplugin.jbook.ui.JBookAppHandler"><%
+  %><jsp:setProperty name="appHandler" property="request"       value="<%= request %>"/><%
+  %><jsp:setProperty name="appHandler" property="response"      value="<%= response %>"/><%
+  %><jsp:setProperty name="appHandler" property="*" /><%
+  %><jsp:setProperty name="appHandler" property="refineWorkspace"  value="<%= String.valueOf(refineWorkspace) %>"/><%
+  %><jsp:setProperty name="appHandler" property="topicRoot"        value="<%= topicRoot %>"/><%
+%></jsp:useBean><%
+
+if (appHandler.validate()) {
+  return;
+}
+
+String appUrl = appHandler.getAppUrl();
+
+jcmsContext.setPageTitle("JBook");
+jcmsContext.addCSSHeader("plugins/JBookPlugin/css/jbook.css");
+jcmsContext.addJavaScript("plugins/JBookPlugin/js/jbook.js");
+%>
+<%@ include file='/jcore/doHeader.jspf' %>
+
+<jalios:app name="jbook">
+
+  <%-- SIDEBAR --%>
+  <%@ include file='/plugins/JBookPlugin/jsp/app/doJBookSidebar.jspf' %>
+
+  <%-- MAIN --%>
+  <jalios:appMain headerTitle="<%= appHandler.getAppTitle() %>">
+    <%@ include file='/plugins/JBookPlugin/jsp/app/doJBookBody.jspf' %>
+  </jalios:appMain>
+
+</jalios:app>
+
+<%@ include file='/jcore/doAjaxFooter.jspf' %>

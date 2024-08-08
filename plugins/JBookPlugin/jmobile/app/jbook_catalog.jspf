@@ -1,0 +1,17 @@
+<%-- Search Input --%>
+<form class="ui-filterable">
+  <div class="colored-banner input-in-header smartphone-jbook-filter-input-wrapper">
+    <input name="text" data-type="search" placeholder="<%= glp("ui.com.placeholder.search") %>" class="jbook-search-filter-input no-focus">
+  </div>
+  <% if (appHandler.getSelectedTopic() != null) { %>
+  <input name="cids" type="hidden" value="<%= appHandler.getSelectedTopic().getId() %>" />
+  <input name="view" type="hidden" value="<%= JBookAppHandler.View.CATALOG.toString() %>" />
+  <% } %>
+</form>
+
+<%-- Items (Topic / Boook) --%>
+<div class="service-jbook-catalog" data-role="content">
+  <ul class="ajax-autocomplete" data-jalios-autocomplete-minchar="0" data-jalios-autocomplete="plugins/JBookPlugin/jmobile/app/jbook_catalogResult.jsp" data-role="listview" data-inset="false" data-filter="true" data-filter-placeholder="<%= glp("jcmsplugin.smartphone.action.filter") %>" data-input=".jbook-search-filter-input" >
+  <%@ include file='/plugins/JBookPlugin/jmobile/app/jbook_catalogItems.jspf' %>
+  </ul>
+</div>

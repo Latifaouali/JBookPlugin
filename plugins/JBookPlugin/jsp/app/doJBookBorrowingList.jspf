@@ -1,0 +1,8 @@
+<jalios:cards css="is-centered">
+  <jalios:foreach collection="<%= borrowingList %>" name="borrowing" type="JBookBorrowing">
+  <% AbstractBook book = borrowing.getBook(); %>
+  <% if (book != null) { %>
+  <%@ include file='/plugins/JBookPlugin/jsp/app/doBookCard.jspf' %>
+  <% } %>
+  </jalios:foreach>
+</jalios:cards>

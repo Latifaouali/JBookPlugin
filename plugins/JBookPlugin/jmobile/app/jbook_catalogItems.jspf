@@ -1,0 +1,27 @@
+<%-- Parent (Back) --%>
+<% if (appHandler.showParentLink()) { %>
+<jalios:listItem icon="jcmsplugin-smartphone-folder-back" template="jmobile" text="<%= appHandler.getParentName() %>" link="<%= appHandler.getParentUrl() %>"/>
+<% } %>
+
+<%-- Topics --%>
+<% if (appHandler.showCategories()) { %>
+<jalios:foreach collection="<%= appHandler.getTopicSet() %>" name="itCat" type="Category">
+<jalios:dataListItem data="<%= itCat %>" template="jmobile" link='<%= appHandler.getAppUrl(itCat) %>' />
+</jalios:foreach>
+<% } %>
+
+<%-- Books --%>
+<% Set<Book> bookSet = appHandler.getBookSet(); %>
+<% if (Util.isEmpty(bookSet)) { %>
+  <% if (appHandler.getSelectedTopic().isLeaf() || Util.notEmpty(appHandler.getText())) { %>
+  <li>
+    <div class="alert alert-info">
+      <%= glp("jcmsplugin.smartphone.service.search.no-result") %>
+    </div>
+  </li>
+  <% } %>
+<% } else { %>
+<jalios:foreach collection="<%= bookSet %>" type="Book" name="book">
+<jalios:dataListItem data="<%= book %>" template="jmobile-jbook" />
+</jalios:foreach>
+<% } %>
